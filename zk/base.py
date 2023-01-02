@@ -382,8 +382,9 @@ class ZK(object):
         else:
             if cmd_response["code"] == const.CMD_ACK_UNAUTH:
                 raise ZKErrorResponse("Unauthenticated")
-            if self.verbose: print ("connect err response {} ".format(cmd_response["code"]))
-            raise ZKErrorResponse("Invalid response: Can't connect")
+            if self.verbose: 
+                print("connect err response {} ".format(cmd_response["code"]))
+                raise ZKErrorResponse("Invalid response: Can't connect")
 
     def disconnect(self):
         """
