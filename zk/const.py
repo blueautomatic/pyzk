@@ -71,7 +71,7 @@ CMD_PREPARE_DATA    = 1500  # Prepares to transmit the data
 CMD_DATA            = 1501  # Transmit a data packet
 CMD_FREE_DATA       = 1502  # Clear machines opened buffer
 
-CMD_ACK_OK          = 2005  # Return value for order perform successfully
+CMD_ACK_OK          = 2000  # Return value for order perform successfully
 CMD_ACK_ERROR       = 2001  # Return value for order perform failed
 CMD_ACK_DATA        = 2002  # Return data
 CMD_ACK_RETRY       = 2003  # * Regstered event occorred */
