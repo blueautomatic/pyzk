@@ -372,11 +372,15 @@ class ZK(object):
         self.__reply_id = const.USHRT_MAX - 1
         cmd_response = self.__send_command(const.CMD_CONNECT)
         self.__session_id = self.__header[2]
-        print("························································ cmd_response, cmd_response.keys(),cmd_response.get('code'), const.CMD_ACK_UNAUTH",cmd_response, cmd_response.keys(),cmd_response.get('code'), const.CMD_ACK_UNAUTH)
+        print("----------------------------------------- cmd_response, cmd_response.keys(),cmd_response.get('code'), const.CMD_ACK_UNAUTH",cmd_response, cmd_response.keys(),cmd_response.get('code'), const.CMD_ACK_UNAUTH)
+        print("----------------------------------------- self.__password, self.__session_id",self.__password, self.__session_id)
         if cmd_response.get('code') == const.CMD_ACK_UNAUTH:
             if self.verbose: print ("try auth")
             command_string = make_commkey(self.__password, self.__session_id)
+            print("----------------------------------------- command_string",command_string)
             cmd_response = self.__send_command(const.CMD_AUTH, command_string)
+            print("----------------------------------------- const.CMD_AUTH",const.CMD_AUTH)
+            print("----------------------------------------- cmd_response",cmd_response)
         if cmd_response.get('status'):
             self.is_connect = True
             return self
